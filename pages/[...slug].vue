@@ -1,9 +1,20 @@
 <script setup>
-const { slug } = useRoute().params
+let { slug } = useRoute().params
 
-const story = await useStoryblok(slug ? slug : 'home', {
-  version: 'draft',
-})
+if (slug.length > 1) slug = slug.join('/')
+
+const resolveRelations = ['popular-articles.articles']
+
+const story = await useStoryblok(
+  slug ? slug : 'home',
+  {
+    version: 'draft',
+    resolve_relations: resolveRelations,
+  },
+  {
+    resolveRelations,
+  }
+)
 </script>
 
 <template>
