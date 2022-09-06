@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "axios": "npm install axios"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.2",
