@@ -29,3 +29,9 @@ You can switch between the different branches of this repository; there is one b
  - Live demo: [Open in StackBlitz](https://stackblitz.com/edit/nuxt-ultimate-tutorial-part-4)
  - Branch: [part-4](https://github.com/storyblok/nuxt-ultimate-tutorial/tree/part-4)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/166654)
+
+### Part 5
+- Tutorial: [Create and Render Blog Articles in Storyblok and Nuxt](https://www.storyblok.com/tp/create-and-render-blog-articles-in-storyblok-and-nuxt)
+- Live demo: [Open in StackBlitz](https://stackblitz.com/edit/nuxt-ultimate-tutorial-part-5)
+- Branch: [part-5](https://github.com/storyblok/nuxt-ultimate-tutorial/tree/part-5)
+- Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/169999)
