@@ -1,1 +1,1 @@
-# The Storyblok Nuxt Ultimate Tutorial: Part 5
+# The Storyblok Nuxt Ultimate Tutorial: Part 6

@@ -17,8 +17,12 @@ defineProps({ blok: Object })
 
 const articles = ref(null)
 const storyblokApi = useStoryblokApi()
+
+const locale = useState('locale')
+
 const { data } = await storyblokApi.get('cdn/stories', {
   version: 'draft',
+  language: locale.value,
   starts_with: 'blog',
 })
 articles.value = data.stories.filter((story) => story.is_startpage !== true)

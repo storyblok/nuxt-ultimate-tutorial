@@ -2,13 +2,17 @@
 let { slug } = useRoute().params
 if (slug.length > 1) slug = slug.join('/')
 
+onBeforeMount(() => {
+  useState('locale').value = 'es'
+})
+
 const resolveRelations = ['popular-articles.articles']
 
 const story = await useStoryblok(
   slug ? slug : 'home',
   {
     version: 'draft',
-    language: 'en',
+    language: 'es',
     resolve_relations: resolveRelations,
   },
   {
