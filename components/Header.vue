@@ -31,7 +31,7 @@
 <script setup>
 const router = useRouter()
 
-const locales = ['en', 'es']
+const locales = useState('locales')
 const locale = useState('locale')
 
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''

@@ -1,6 +1,12 @@
 <script setup>
 let { slug } = useRoute().params
-if (slug.length > 1) slug = slug.join('/')
+
+const locales = useState('locales')
+const locale = useState('locale')
+const isLocale = locales.value.some(loc => loc === slug[0])
+if (isLocale) slug.shift()
+
+if(slug) slug = slug.join('/')
 
 const resolveRelations = ['popular-articles.articles']
 
@@ -8,7 +14,7 @@ const story = await useStoryblok(
   slug ? slug : 'home',
   {
     version: 'draft',
-    language: 'en',
+    language: locale.value,
     resolve_relations: resolveRelations,
   },
   {
