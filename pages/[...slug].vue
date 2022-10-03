@@ -6,12 +6,10 @@ const locale = useState('locale')
 const isLocale = locales.value.some(loc => loc === slug[0])
 if (isLocale) slug.shift()
 
-if(slug) slug = slug.join('/')
-
 const resolveRelations = ['popular-articles.articles']
 
 const story = await useStoryblok(
-  slug ? slug : 'home',
+  slug && slug.length > 0 ? slug.join('/') : 'home',
   {
     version: 'draft',
     language: locale.value,
