@@ -5,7 +5,7 @@ if (slug.length > 1) slug = slug.join('/')
 
 const resolveRelations = ['popular-articles.articles']
 
-const story = await useStoryblok(
+const story = await useAsyncStoryblok(
   slug ? slug : 'home',
   {
     version: 'draft',
