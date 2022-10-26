@@ -1,5 +1,5 @@
 <script setup>
-const story = await useStoryblok('home', { version: 'draft' })
+const story = await useAsyncStoryblok('home', { version: 'draft' })
 </script>
 
 <template>

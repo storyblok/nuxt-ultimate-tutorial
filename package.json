@@ -9,8 +9,8 @@
     "axios": "npm install axios"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.3.2",
-    "@storyblok/nuxt": "^4.2.0",
-    "nuxt": "^3.0.0-rc.8"
+    "@nuxtjs/tailwindcss": "^6.1.1",
+    "@storyblok/nuxt": "^4.4.2",
+    "nuxt": "^3.0.0-rc.12"
   }
 }
