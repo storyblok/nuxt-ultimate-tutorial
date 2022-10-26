@@ -9,7 +9,7 @@
     "stackblitz": "npm install axios@^0.27.2 && npm run dev"
   },
   "stackblitz": {
-    "startCommand": "stackblitz"
+    "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.1",
