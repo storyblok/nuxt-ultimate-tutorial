@@ -5,10 +5,11 @@
     "dev": "nuxt dev",
     "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "stackblitz": "npm install axios@^0.27.2 && npm run dev"
   },
   "stackblitz": {
-    "startCommand": "npm install axios@^0.27.2 && npm run dev"
+    "startCommand": "stackblitz"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.1",
