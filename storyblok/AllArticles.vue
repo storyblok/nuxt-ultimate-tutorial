@@ -15,11 +15,14 @@
 <script setup>
 defineProps({ blok: Object })
 
-const articles = ref(null)
+const { locale } = useI18n()
 const storyblokApi = useStoryblokApi()
+
 const { data } = await storyblokApi.get('cdn/stories', {
   version: 'draft',
+  language: locale.value,
   starts_with: 'blog',
+  is_startpage: 0,
 })
-articles.value = data.stories.filter((story) => story.is_startpage !== true)
+const articles = ref(data.stories)
 </script>
