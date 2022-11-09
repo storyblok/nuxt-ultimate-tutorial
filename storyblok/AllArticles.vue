@@ -22,7 +22,7 @@ const { data } = await storyblokApi.get('cdn/stories', {
   version: 'draft',
   language: locale.value,
   starts_with: 'blog',
-  is_startpage: 0,
+  is_startpage: false,
 })
 const articles = ref(data.stories)
 </script>
