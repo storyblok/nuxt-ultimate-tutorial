@@ -6,6 +6,7 @@
     "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "static-server": "npx serve .output/public",
     "stackblitz": "npm install axios@^0.27.2 && npm run dev"
   },
   "stackblitz": {
@@ -17,5 +18,8 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
     "nuxt": "^3.0.0-rc.12"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^8.0.0-beta.3"
   }
 }
