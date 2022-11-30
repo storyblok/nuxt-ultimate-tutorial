@@ -17,5 +17,8 @@ export default defineNuxtConfig({
   },
   generate: {
     routes: ['/es']
+  },
+  experimental: {
+    payloadExtraction: false
   }
 })
