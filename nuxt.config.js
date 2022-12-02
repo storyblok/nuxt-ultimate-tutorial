@@ -1,3 +1,5 @@
+import { apiPlugin } from '@storyblok/vue'
+
 export default defineNuxtConfig({
   css: ['@/assets/css/roboto.css'],
   modules: [
@@ -5,7 +7,7 @@ export default defineNuxtConfig({
       '@storyblok/nuxt',
       {
         accessToken: 'xr4OhJ2GGQ6Oco2ugxQn0Att',
-        usePlugin: true
+        use: [apiPlugin]
       },
     ],
     '@nuxtjs/tailwindcss',

@@ -13,11 +13,11 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.1.1",
+    "@nuxtjs/tailwindcss": "^6.1.3",
     "@storyblok/nuxt": "^4.6.0",
     "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.7",
-    "nuxt": "^3.0.0-rc.12"
+    "@tailwindcss/typography": "^0.5.8",
+    "nuxt": "^3.0.0"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.3"
