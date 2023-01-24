@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
-
 export default defineNuxtConfig({
   css: ['@/assets/css/roboto.css'],
   modules: [
@@ -7,6 +5,9 @@ export default defineNuxtConfig({
       '@storyblok/nuxt',
       {
         accessToken: 'TxjwDdrurDCNvQwkIyREVwtt',
+        // apiOptions: {
+        //   region: "us" // When creating your space in US region (EU default)
+        // }
       },
     ],
     '@nuxtjs/tailwindcss',
