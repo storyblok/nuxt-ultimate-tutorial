@@ -3,17 +3,17 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "dev-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "stackblitz": "npm install axios@^0.27.2 && npm run dev"
+    "stackblitz": "npm run dev"
   },
   "stackblitz": {
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.1.1",
-    "@storyblok/nuxt": "^4.4.2",
-    "nuxt": "^3.0.0-rc.12"
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@storyblok/nuxt": "^5.0.2",
+    "nuxt": "^3.0.0"
   }
 }
