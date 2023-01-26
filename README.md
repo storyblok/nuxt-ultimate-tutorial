@@ -12,12 +12,13 @@ Changes from nuxt-ultimate-tutorial:
 * Router middleware to redirect to path with trailing slash - [Forcing trailing slash for netlify](https://dev.to/mornir/nuxt-netlify-and-the-trailing-slash-3gge)
 * Updated `[...slug].vue` with `useAsyncStoryblok` and better route handling - [useAsyncStoryblok as suggested method for pulling async data](https://github.com/storyblok/storyblok-nuxt#:~:text=%3Cscript%20setup%3E%0A%20%20const%20story%20%3D%20await%20useAsyncStoryblok(%22vue%22%2C%20%7B%20version%3A%20%22draft%22%20%7D)%3B%0A%3C/script%3E%0A%0A%3Ctemplate%3E%0A%20%20%3CStoryblokComponent%20v%2Dif%3D%22story%22%20%3Ablok%3D%22story.content%22%20/%3E%0A%3C/template%3E), [route handling with proper preview mode](https://discord.com/channels/700316478792138842/1068125231845216256/1068186352312668210)
 * Attempts to improve tailwind intellisense - [Recommended extension and setting from 2022](https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker#:~:text=2022%2D05%20Update,my%20recommended%20approach.)
-
+* Updated AllArticles to improve prerendered support - [Using useAsyncData to store data in application](https://nuxt.com/docs/api/composables/use-async-data)
 
 ## Vscode
 ### Recommended extensions:
 * [vue.volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue language support recommended by nuxt3
 * [Vue.vscode-typescript-vue-plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) - Typescript support for volar
+* [bradlc.vscode-tailwindcss](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - vscode tailwind css support
 
 ### Unrecommended extensions:
 * [octref.vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Not recommended for Typescript
