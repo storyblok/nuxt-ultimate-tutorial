@@ -16,14 +16,12 @@
       :src="blok.background_image.filename"
       :alt="blok.background_image.alt"
       class="absolute top-0 left-0 z-0 w-full h-full object-cover"
-    />
+    >
   </div>
 </template>
 
 <script setup>
-const props = defineProps({ blok: Object })
+  const props = defineProps({ blok: Object });
 
-const heroClasses = computed(() => {
-  return props.blok.layout === 'constrained' ? 'container mx-auto my-6 rounded-[5px]' : ''
-})
+  const heroClasses = computed(() => (props.blok.layout === 'constrained' ? 'container mx-auto my-6 rounded-[5px]' : ''));
 </script>
