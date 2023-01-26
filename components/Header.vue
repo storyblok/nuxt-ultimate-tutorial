@@ -29,7 +29,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const localePath = useLocalePath();
   const { locale, locales, setLocale } = useI18n();
 

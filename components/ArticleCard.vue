@@ -20,7 +20,7 @@
   </NuxtLink>
 </template>
 
-<script setup>
+<script setup lang="ts">
   defineProps({
     article: {
       type: Object,
