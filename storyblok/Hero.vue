@@ -21,7 +21,12 @@
 </template>
 
 <script setup>
-  const props = defineProps({ blok: Object });
+  const props = defineProps({
+    blok: {
+      type: Object,
+      required: true,
+    },
+  });
 
   const heroClasses = computed(() => (props.blok.layout === 'constrained' ? 'container mx-auto my-6 rounded-[5px]' : ''));
 </script>

@@ -15,5 +15,10 @@
 </template>
 
 <script setup>
-  defineProps({ blok: Object });
+  defineProps({
+    blok: {
+      type: Object,
+      required: true,
+    },
+  });
 </script>

@@ -21,7 +21,16 @@
 </template>
 
 <script setup>
-  defineProps({ article: Object, slug: String });
+  defineProps({
+    article: {
+      type: Object,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+  });
 
   const localePath = useLocalePath();
 </script>

@@ -15,7 +15,12 @@
 </template>
 
 <script setup>
-  defineProps({ blok: Object });
+  defineProps({
+    blok: {
+      type: Object,
+      required: true,
+    },
+  });
 
   const { locale } = useI18n();
   const storyblokApi = useStoryblokApi();

@@ -19,7 +19,12 @@
 </template>
 
 <script setup>
-  const props = defineProps({ blok: Object });
+  const props = defineProps({
+    blok: {
+      type: Object,
+      required: true,
+    },
+  });
 
   const resolvedRichText = computed(() => renderRichText(props.blok.content));
 </script>
