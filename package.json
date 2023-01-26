@@ -1,13 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "static-server": "npx serve .output/public",
-    "stackblitz": "npm install axios@^0.27.2 && npm run dev"
+    "prepare": "npx nuxi prepare",
+    "dev": "npx nuxi dev",
+    "build": "npx nuxi build",
+    "dev-ssl": "npx nuxi build --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "generate": "npx nuxi generate",
+    "preview": "npx nuxi preview",
+    "deploy": "npx nuxi build && node .output/server/index.mjs",
+    "static-deploy": "npx nuxi generate && npx serve -s .output/public",
+    "stackblitz": "npm install axios@^0.27.2 && npm run dev",
+    "storyblok-login": "storyblok login",
+    "storyblok-logout": "storyblok logout"
   },
   "stackblitz": {
     "startCommand": "npm run stackblitz"
