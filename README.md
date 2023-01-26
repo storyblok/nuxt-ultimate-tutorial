@@ -8,6 +8,7 @@ Changes from nuxt-ultimate-tutorial:
 * Coverts the project into Typescript - [Advantages with a typed language](https://garycordero1690.medium.com/loosely-typed-and-strongly-type-languages-550ce60b2739#:~:text=Strongly%20typed%20languages%20give%20more%20structure%20and%20safety%20to%20the%20program%20and%20many%20errors%20are%20caught%20during%20the%20compilation%20time.%20Making%20it%20easier%20to%20debug%20and%20test%20your%20code.), [Nuxt with typescript](https://nuxt.com/docs/guide/concepts/typescript)
 * Updated package scripts according to nuxt recommendations - [Nuxt3 Commands](https://nuxt.com/docs/api/commands/add)
 * Storyblok CLI support - [storyblok CLI on github](https://github.com/storyblok/storyblok-cli)
+* Eslint support and my recommended rules - [nuxt3 typescript eslint](https://www.npmjs.com/package/@nuxtjs/eslint-config-typescript), [typescript eslint](@typescript-eslint/eslint-plugin), [airbnb eslint rules](eslint-config-airbnb-base)
 
 
 
