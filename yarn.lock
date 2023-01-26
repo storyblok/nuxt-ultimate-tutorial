@@ -847,10 +847,10 @@
     vite-plugin-checker "^0.5.4"
     vue-bundle-renderer "^1.0.0"
 
-"@nuxtjs/i18n@^8.0.0-beta.3":
-  version "8.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-beta.8.tgz#1581dbf6e237d69b8997dc8d596bd62ec6757d46"
-  integrity sha512-XXOGdAnlbjHPVtY0exI+V+K9Lz0xo3oOtR0mZDV1hvO5H5EOQGvHtHvG6aufFsR10rgw4tI66pCvo/MLKeoH4g==
+"@nuxtjs/i18n@npm:@nuxtjs/i18n-edge":
+  version "8.0.0-beta.8-27909545.920a4fe"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n-edge/-/i18n-edge-8.0.0-beta.8-27909545.920a4fe.tgz#d1ee59922e4096bf1cd537704b48619cc6598b86"
+  integrity sha512-6hFYwjgmDiuyFYIEHN3X6NAlGs0173dfdMX32HWG74gcY1wAGPJLw6BdYwxNJSAuvIvFxeNhZ5D4UGrAPxOrTg==
   dependencies:
     "@intlify/bundle-utils" "^3.4.0"
     "@intlify/shared" "9.3.0-beta.11"
@@ -978,26 +978,27 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@storyblok/js@^1.8.3":
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.8.6.tgz#ca210b6828095e72ebdd3281202c6474f6e50392"
-  integrity sha512-MpDhwfs+TBrnfQqr9z+z7SCLnvX6/jZKCasexEvVt0Qp+MvWD7IsQtBu6WnKboTjaR4VLFb69YTk+xUG/Roqgw==
+"@storyblok/js@^2.0.5":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-2.0.10.tgz#1f6c9320e7228e2824e4e3736a18ea8eb7a8395d"
+  integrity sha512-L3kHyRo79n4X0ZebHZzPtipQGWP04+mKt1dI6BCy4YKHjFEaPEeJLmVPyl5nEIDbGmwVM1VPuyJpCHzK6o5Frg==
   dependencies:
-    storyblok-js-client "^4.5.8"
+    storyblok-js-client "^5.3.4"
 
-"@storyblok/nuxt@^4.4.2":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-4.6.0.tgz#fa55abe89410dbce9eb295ff36e1e70db6a7198a"
-  integrity sha512-Km0HEuHJZ3PP0R3S9mQhkr4pAIDQG2qX6Y35mB5ncH7Gw1NmO2yWScg6FcX0fGr2W5ENXjDfePGAtEtmytPdIQ==
+"@storyblok/nuxt@^5.0.0":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-5.0.2.tgz#84947cda91f6bc380b0e346981cd8540fe784a0c"
+  integrity sha512-XKnnvGD4VI/to3KMSvp6HzKIr5Wb/TVb6+95l6bX7N6NDrEpPJ8wqYbGq3I0j93uoUyEcdoLBNqLBOfC42jyXA==
   dependencies:
-    "@storyblok/vue" "^6.3.0"
+    "@nuxt/kit" "^3.0.0"
+    "@storyblok/vue" "^7.0.0"
 
-"@storyblok/vue@^6.3.0":
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/@storyblok/vue/-/vue-6.3.2.tgz#fbb07de2b615f0952540c9854e43350c458fa85e"
-  integrity sha512-0nBIco2WsEmaqTTRxuYQeTRQkFqUheZsUlRgo2uw9qbZj8VMDrSqd6pxstZEn0LcijzbpFNhOOObIpo9rVsCkQ==
+"@storyblok/vue@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/vue/-/vue-7.0.0.tgz#064c223ac79e3c864d953d1ff89b3201aab075ce"
+  integrity sha512-r23LAho/M2fk6bNUW39XDTMM8V+Eug9gZoZf3ZBRoW40fpnjzP8eQj0hnCqhFK5gfOFVsmsL206AAbQx1xz3lQ==
   dependencies:
-    "@storyblok/js" "^1.8.3"
+    "@storyblok/js" "^2.0.5"
 
 "@tailwindcss/line-clamp@^0.4.2":
   version "0.4.2"
@@ -3687,7 +3688,7 @@ nuxi@3.1.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt@^3.0.0-rc.12:
+nuxt@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.1.1.tgz#c8acb7dadb006aa6c4ada6129e7dcacddbfad7a9"
   integrity sha512-GVdmV88lR01OX0slxTPyTzwQkge7fxNREkx2QW0Lo66fb6aHcJlRXzFMBCOTjas+Ncng6AalIyIiPREEteGKSg==
@@ -4691,10 +4692,10 @@ std-env@^3.3.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.3.1.tgz#93a81835815e618c8aa75e7c8a4dc04f7c314e29"
   integrity sha512-3H20QlwQsSm2OvAxWIYhs+j01MzzqwMwGiiO1NQaJYZgJZFPuAbf95/DiKRBSTYIJ2FeGUc+B/6mPGcWP9dO3Q==
 
-storyblok-js-client@^4.5.8:
-  version "4.5.8"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.8.tgz#862f67d4f25b6c50334e6965bf27f6b6a755ccae"
-  integrity sha512-0Wp7Kn4RdKaKRgMmNDu8c6OC81x1mgeri4ziKDY9BsUZEIGLTNw8KFIWlHYACgMnJQn/6qZaV9kGo8IY4hv6GA==
+storyblok-js-client@^5.3.4:
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-5.3.5.tgz#327a043aa25914e62613005955d0179517c78d18"
+  integrity sha512-SAl+duTsUuk37GNJpXFnkn+j5FV5hTW8hnL7HjBgWqBNem27+gUXjV82K5VNlyGkmJNYBDpiN6cLSlTOvbzjOw==
 
 "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
