@@ -1,37 +1,36 @@
-<script setup>
-  const { slug } = useRoute().params;
+<script setup lang="ts">
+  import { ISbStoryData } from '@storyblok/vue/dist';
 
+  const route = useRoute();
   const { locale } = useI18n();
-  const storyblokApiInstance = useStoryblokApi();
-  const resolveRelations = ['popular-articles.articles'];
 
-  const url = slug && slug.length > 0 ? slug.join('/') : 'home';
+  let story = {} as ISbStoryData;
 
-  const { data } = await useAsyncData(
-    `${locale.value}-${url}`,
-    async () => await storyblokApiInstance.get(
-      `cdn/stories/${url}`,
-      {
-        version: 'draft',
-        language: locale.value,
-        resolve_relations: resolveRelations,
-      },
-    ),
-  );
-
-  const story = useState(`${locale.value}-${url}-story`, () => data.value.data.story);
-
-  onMounted(() => {
-    if (story.value && story.value.id) {
-      useStoryblokBridge(
-        story.value.id,
-        evStory => (story.value = evStory),
-        {
-          resolveRelations,
-        },
-      );
+  try {
+    const currentRoute = { ...route };
+    const localeString = `/${locale}`;
+    if (currentRoute.path.startsWith(localeString)) {
+      currentRoute.path = currentRoute.path.slice(localeString.length);
     }
-  });
+    if (currentRoute.path === '/') {
+      currentRoute.path = 'home';
+    }
+    currentRoute.path = currentRoute.path.replace(/(^\/+|\/+$)/mg, '');
+
+    const isPreview = !!(currentRoute.query._storyblok && currentRoute.query._storyblok !== '');
+    const version = isPreview ? 'draft' : 'published';
+
+    await useAsyncStoryblok(currentRoute.path, {
+      version,
+      language: locale.value,
+      resolve_relations: 'popular-articles.articles',
+    }).then((res) => {
+      story = res.value;
+    });
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
 </script>
 
 <template>
