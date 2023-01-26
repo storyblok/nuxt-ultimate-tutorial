@@ -21,7 +21,14 @@
     "@storyblok/nuxt": "^5.0.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.0.0",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "vite-plugin-eslint": "^1.6.1"
   },
   "dependencies": {
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge"
