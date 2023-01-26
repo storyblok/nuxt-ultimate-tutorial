@@ -9,7 +9,9 @@ Changes from nuxt-ultimate-tutorial:
 * Updated package scripts according to nuxt recommendations - [Nuxt3 Commands](https://nuxt.com/docs/api/commands/add)
 * Storyblok CLI support - [storyblok CLI on github](https://github.com/storyblok/storyblok-cli)
 * Eslint support and my recommended rules - [nuxt3 typescript eslint](https://www.npmjs.com/package/@nuxtjs/eslint-config-typescript), [typescript eslint](@typescript-eslint/eslint-plugin), [airbnb eslint rules](eslint-config-airbnb-base)
-
+* Router middleware to redirect to path with trailing slash - [Forcing trailing slash for netlify](https://dev.to/mornir/nuxt-netlify-and-the-trailing-slash-3gge)
+* Updated `[...slug].vue` with `useAsyncStoryblok` and better route handling - [useAsyncStoryblok as suggested method for pulling async data](https://github.com/storyblok/storyblok-nuxt#:~:text=%3Cscript%20setup%3E%0A%20%20const%20story%20%3D%20await%20useAsyncStoryblok(%22vue%22%2C%20%7B%20version%3A%20%22draft%22%20%7D)%3B%0A%3C/script%3E%0A%0A%3Ctemplate%3E%0A%20%20%3CStoryblokComponent%20v%2Dif%3D%22story%22%20%3Ablok%3D%22story.content%22%20/%3E%0A%3C/template%3E), [route handling with proper preview mode](https://discord.com/channels/700316478792138842/1068125231845216256/1068186352312668210)
+* Attempts to improve tailwind intellisense - [Recommended extension and setting from 2022](https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker#:~:text=2022%2D05%20Update,my%20recommended%20approach.)
 
 
 ## Vscode
