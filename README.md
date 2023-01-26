@@ -13,8 +13,8 @@ Changes from nuxt-ultimate-tutorial:
 
 ## Vscode
 ### Recommended extensions:
-[vue.volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue language support recommended by nuxt3
-[Vue.vscode-typescript-vue-plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) - Typescript support for volar
+[vue.volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue language support recommended by nuxt3.
+[Vue.vscode-typescript-vue-plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) - Typescript support for volar.
 
 ### Unrecommended extensions:
-[octref.vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Not recommended for Typescript
+[octref.vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Not recommended for Typescript.
