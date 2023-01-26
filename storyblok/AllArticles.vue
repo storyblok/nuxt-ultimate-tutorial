@@ -14,7 +14,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+  import { ISbStoryData } from '@storyblok/vue/dist';
+
   defineProps({
     blok: {
       type: Object,
@@ -23,13 +25,24 @@
   });
 
   const { locale } = useI18n();
-  const storyblokApi = useStoryblokApi();
+  const route = useRoute();
 
-  const { data } = await storyblokApi.get('cdn/stories', {
-    version: 'draft',
-    language: locale.value,
-    starts_with: 'blog',
-    is_startpage: false,
-  });
-  const articles = ref(data.stories);
+  const isPreview = !!(route.query._storyblok && route.query._storyblok !== '');
+  const version = isPreview ? 'draft' : 'published';
+
+  const storyblokApi = useStoryblokApi();
+  const { data } = await useAsyncData(
+    `${locale.value}--all-articles`,
+    // eslint-disable-next-line no-return-await
+    async () => await storyblokApi.get(
+      'cdn/stories',
+      {
+        version,
+        language: locale.value,
+        starts_with: 'blog',
+        is_startpage: 0,
+      },
+    ),
+  );
+  const articles = useState<ISbStoryData[]>(`${locale.value}-all-articles-story`, () => data.value?.data.stories);
 </script>
