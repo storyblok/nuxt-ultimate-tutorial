@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  // ssr: false,
   css: ['@/assets/css/roboto.css'],
   modules: [
     [
@@ -16,6 +17,6 @@ export default defineNuxtConfig({
     defaultLocale: 'en', // default locale
   },
   generate: {
-    routes: ['/es']
-  }
-})
+    routes: ['/es'],
+  },
+});

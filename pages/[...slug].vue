@@ -8,7 +8,7 @@
 
   try {
     const currentRoute = { ...route };
-    const localeString = `/${locale}`;
+    const localeString = `/${locale.value}`;
     if (currentRoute.path.startsWith(localeString)) {
       currentRoute.path = currentRoute.path.slice(localeString.length);
     }
