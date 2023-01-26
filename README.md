@@ -18,3 +18,4 @@ Changes from nuxt-ultimate-tutorial:
 
 ### Unrecommended extensions:
 * [octref.vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Not recommended for Typescript
+* vscode.typescript-language-features - Built in support typescript support not recommended when using volar
