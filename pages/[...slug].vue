@@ -24,6 +24,8 @@
       version,
       language: locale.value,
       resolve_relations: 'popular-articles.articles',
+    }, {
+      preventClicks: true,
     }).then((res) => {
       story = res.value;
     });
