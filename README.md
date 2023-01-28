@@ -26,3 +26,19 @@ Changes from nuxt-ultimate-tutorial:
 ### Unrecommended extensions:
 * [octref.vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Not recommended for Typescript
 * vscode.typescript-language-features - Built in support typescript support not recommended when using volar
+
+### Setting up the Storyblok Space
+Either use the [create your own copy link](https://app.storyblok.com/#!/build/169999) from [storyblok/nuxt-ultimate-tutorial](https://github.com/storyblok/nuxt-ultimate-tutorial#:~:text=Branch%3A%20part%2D5-,Storyblok%20space%3A%20Create%20your%20own%20copy,-About) or you can use the storyblok cli.
+
+How to set up storyblok-nuxt-ultimate-template with Storyblok CLI:
+1. Login to Storyblok CLI in your command line while in the project directory (make sure you have run `yarn install` first) - `yarn storyblok login`
+![image](https://user-images.githubusercontent.com/5083273/209108425-7cc108a5-35e8-4602-ba69-78e4a748979c.png)
+
+2. Create a new Storyblok Space - `yarn storyblok quickstart`
+
+![image](https://user-images.githubusercontent.com/5083273/215266135-11c86f60-ab7e-4abd-aafa-ab37f098246d.png)
+3. Grab your new storyblok space id - `yarn storyblok spaces`
+4. Push the nuxt-ultimate-tutorial components to your new Storyblok space - `yarn storyblok push-components --space {your-space-id} storyblok/components.json`
+5. Remove all the components that does not belong to nuxt-ultimate-tutorial - `yarn storyblok delete-components storyblok/components.json --space {your-space-id} --reverse`
+6. ???
+7. You are now ready to create content in Storyblok
