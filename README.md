@@ -16,6 +16,7 @@ Changes from nuxt-ultimate-tutorial:
 * Attempts to improve tailwind intellisense - [Recommended extension and setting from 2022](https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker#:~:text=2022%2D05%20Update,my%20recommended%20approach.)
 * Updated AllArticles to improve prerendered support - [Using useAsyncData to store data in application](https://nuxt.com/docs/api/composables/use-async-data)
 * Disables clicks in live editor - [bridge options](https://www.storyblok.com/docs/Guides/storyblok-latest-js#:~:text=If%20you%20want%20to%20prevent%20the%20iframe%20events%2C%20like%20clicking%20on%20a%20link%2C%20to%20happen%2C%20you%20can%20set%20this%20option.)
+* Adds a custom async storyblok fetch composable that has proper error handling - [Throw 404 error if story was not found](https://github.com/storyblok/storyblok-nuxt/pull/267), [Adds a check for errors on useAsyncStoryblok to prevent errors from gettting to clients.](https://github.com/storyblok/storyblok-nuxt/pull/259)
 
 ## Vscode
 ### Recommended extensions:
