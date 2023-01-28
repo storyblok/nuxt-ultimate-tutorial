@@ -20,14 +20,16 @@
     const isPreview = !!(currentRoute.query._storyblok && currentRoute.query._storyblok !== '');
     const version = isPreview ? 'draft' : 'published';
 
-    await useAsyncStoryblok(currentRoute.path, {
+    await useCustomAsyncStoryblok(currentRoute.path, {
       version,
       language: locale.value,
       resolve_relations: 'popular-articles.articles',
     }, {
       preventClicks: true,
     }).then((res) => {
-      story = res.value;
+      if (res) {
+        story = res.value;
+      }
     });
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -36,5 +38,5 @@
 </script>
 
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+  <StoryblokComponent v-if="story.content" :blok="story.content" />
 </template>
