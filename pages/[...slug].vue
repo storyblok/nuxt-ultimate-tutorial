@@ -2,39 +2,41 @@
   import { ISbStoryData } from '@storyblok/vue/dist';
 
   const route = useRoute();
-  const { locale } = useI18n();
+  const { locale, locales } = useI18n();
+  let calculatedLocale = locale.value;
 
-  let story = {} as ISbStoryData;
-
-  try {
-    const currentRoute = { ...route };
-    const localeString = `/${locale.value}`;
-    if (currentRoute.path.startsWith(localeString)) {
-      currentRoute.path = currentRoute.path.slice(localeString.length);
+  const currentRoute = { ...route };
+  locales.value.forEach((loc) => {
+    const internalLoc = loc as string;
+    if (currentRoute.path.startsWith(`/${internalLoc}`)) {
+      console.log(internalLoc);
+      calculatedLocale = internalLoc;
     }
-    if (currentRoute.path === '/') {
-      currentRoute.path = 'home';
-    }
-    currentRoute.path = currentRoute.path.replace(/(^\/+|\/+$)/mg, '');
-
-    const isPreview = !!(currentRoute.query._storyblok && currentRoute.query._storyblok !== '');
-    const version = isPreview ? 'draft' : 'published';
-
-    await useCustomAsyncStoryblok(currentRoute.path, {
-      version,
-      language: locale.value,
-      resolve_relations: 'popular-articles.articles',
-    }, {
-      preventClicks: true,
-    }).then((res) => {
-      if (res) {
-        story = res.value;
-      }
-    });
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
+  });
+  currentRoute.path = currentRoute.path.replace(new RegExp(`^/${calculatedLocale}`, 'mg'), '');
+  /* if (currentRoute.path.startsWith(localeString)) {
+    currentRoute.path = currentRoute.path.slice(localeString.length);
+  } */
+  if (currentRoute.path === '/') {
+    currentRoute.path = 'home';
   }
+  currentRoute.path = currentRoute.path.replace(/(^\/+|\/+$)/mg, '');
+
+  const isPreview = !!(currentRoute.query._storyblok && currentRoute.query._storyblok !== '');
+  const version = isPreview ? 'draft' : 'published';
+
+  console.log('path:', currentRoute.path);
+  console.log('version:', version);
+  console.log('language:', calculatedLocale);
+
+  const story = await useCustomAsyncStoryblok(currentRoute.path, {
+    version,
+    language: calculatedLocale,
+    resolve_relations: 'popular-articles.articles',
+  }, {
+    preventClicks: true,
+  });
+  console.log(story.value);
 </script>
 
 <template>

@@ -930,10 +930,10 @@
     eslint-plugin-unicorn "^42.0.0"
     eslint-plugin-vue "^8.7.1"
 
-"@nuxtjs/i18n@npm:@nuxtjs/i18n-edge":
-  version "8.0.0-beta.8-27909545.920a4fe"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n-edge/-/i18n-edge-8.0.0-beta.8-27909545.920a4fe.tgz#d1ee59922e4096bf1cd537704b48619cc6598b86"
-  integrity sha512-6hFYwjgmDiuyFYIEHN3X6NAlGs0173dfdMX32HWG74gcY1wAGPJLw6BdYwxNJSAuvIvFxeNhZ5D4UGrAPxOrTg==
+"@nuxtjs/i18n@^8.0.0-beta.9":
+  version "8.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-beta.9.tgz#6bccff4f900a09a9cb220f35dfa22f248a0a0d0c"
+  integrity sha512-Vz90kpmr1WJIPqAhlLWD3Yov8/DWCUQiT/5Xu8Kuqw+iZ47ZI7HI2W6BzwusHSRHn+fINxg/lKgs0uWw38PfKw==
   dependencies:
     "@intlify/bundle-utils" "^3.4.0"
     "@intlify/shared" "9.3.0-beta.11"

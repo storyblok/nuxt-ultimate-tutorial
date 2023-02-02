@@ -9,7 +9,7 @@ export const useCustomAsyncStoryblok = async (
   bridgeOptions = {},
 ) => {
   const uniqueKey = `${JSON.stringify(apiOptions)}${url}`;
-  // https://github.com/storyblok/storyblok-nuxt/pull/280
+  // https://github.com/storyblok/storyblok-nuxt/pull/280  const uniqueKey = `${JSON.stringify(apiOptions)}${url}`;
   const story = useState<ISbStoryData>(`${uniqueKey}-state`, () => ({} as ISbStoryData));
   const storyblokApiInstance = useStoryblokApi();
 
@@ -22,22 +22,42 @@ export const useCustomAsyncStoryblok = async (
       );
     }
   });
-
-  await useAsyncData<ISbResult, ISbError>(
-    `${uniqueKey}-asyncdata`,
-    async () => await storyblokApiInstance.get(`cdn/stories/${url}`, apiOptions),
-  ).then((response) => {
-    const { data, error } = response;
-    const storyblokData = data.value as ISbResult;
-    const storyblokError = error.value as ISbError;
-    if (storyblokError) {
-      if (storyblokError.response.status >= 400 && storyblokError.response.status < 600) {
-        throw new Error(storyblokError.message.message);
-      }
-    }
-    story.value = storyblokData.data.story;
-  }).catch((error) => {
-    console.error('error', error);
-  });
+  console.log(`cdn/stories/${url}`);
+  // console.log(await storyblokApiInstance.get(`cdn/stories/${url}`, apiOptions));
+  const {
+    data, pending, error, refresh,
+  } = await useAsyncData(
+    'mountains',
+    () => $fetch('https://api.nuxtjs.dev/mountains'),
+  );
+  // const {
+  //   data, pending, error, refresh,
+  // } = await useAsyncData(
+  //   `${uniqueKey}-asyncdata`,
+  //   async () => {
+  //     console.log('async data handler');
+  //     await storyblokApiInstance.get(`cdn/stories/${url}`, apiOptions);
+  //   },
+  // )/* .then((response) => {
+  //   console.log(response);
+  //   const { data, error } = response;
+  //   console.log(data.value);
+  //   console.log(error);
+  //   const storyblokData = data.value as Object;
+  //   console.log(storyblokData);
+  //   const storyblokError = error.value as Object;
+  //   console.log(storyblokError);
+  //   // if (storyblokError) {
+  //   //   if (storyblokError.response.status >= 400 && storyblokError.response.status < 600) {
+  //   //     throw createError({ statusCode: storyblokError.response.status, statusMessage: storyblokError.message.message });
+  //   //   }
+  //   // }
+  //   // story.value = storyblokData.data.story;
+  // }) */;
+  console.log(JSON.stringify(data.value));
+  console.log(data);
+  console.log(pending);
+  console.log(error);
+  console.log(refresh);
   return story;
 };
