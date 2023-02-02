@@ -1,4 +1,7 @@
 import { NuxtI18nOptions } from '@nuxtjs/i18n';
+import { useStoryblokRawFetchDynamicRoutes } from './composables/useStoryblokRawFetch';
+
+const storyblokApiToken = 'xr4OhJ2GGQ6Oco2ugxQn0Att';
 
 const i18nConfig = {
   strategy: 'prefix_except_default',
@@ -13,23 +16,22 @@ export default defineNuxtConfig({
     [
       '@storyblok/nuxt',
       {
-        accessToken: 'xr4OhJ2GGQ6Oco2ugxQn0Att',
+        accessToken: storyblokApiToken,
       },
     ],
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
   ],
   i18n: i18nConfig,
-  generate: {
-    routes: ['/es'],
-  },
   hooks: {
     async 'nitro:config'(nitroConfig) {
-      console.log(i18nConfig);
-      // if (nitroConfig.dev) { return; }
+      if (nitroConfig.dev || !i18nConfig) { return; }
       // ..Async logic..
-      // const dynamicRoutes = await useStoryblokRawFetchDynamicRoutes(process.env.STORYBLOK_API_TOKEN as string);
-      // nitroConfig?.prerender?.routes?.push(...dynamicRoutes);
+      for (const locale of i18nConfig.locales) {
+        const dynamicRoutes = await useStoryblokRawFetchDynamicRoutes(storyblokApiToken, locale);
+        console.log(dynamicRoutes);
+        nitroConfig?.prerender?.routes?.push(...dynamicRoutes);
+      }
     },
   },
 });
