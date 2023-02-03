@@ -10,6 +10,11 @@ const i18nConfig = {
 } as NuxtI18nOptions;
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      STORYBLOK_API_TOKEN: storyblokApiToken,
+    },
+  },
   // ssr: false,
   css: ['@/assets/css/roboto.css'],
   modules: [

@@ -1,15 +1,14 @@
 <script setup lang="ts">
-  import { ISbStoryData } from '@storyblok/vue/dist';
+  import type { ISbStoryData } from '@storyblok/vue';
 
   const route = useRoute();
   const { locale, locales } = useI18n();
   let calculatedLocale = locale.value;
 
   const currentRoute = { ...route };
-  locales.value.forEach((loc) => {
-    const internalLoc = loc as string;
+  locales.value.forEach((loc: string) => {
+    const internalLoc = loc;
     if (currentRoute.path.startsWith(`/${internalLoc}`)) {
-      console.log(internalLoc);
       calculatedLocale = internalLoc;
     }
   });
@@ -25,18 +24,15 @@
   const isPreview = !!(currentRoute.query._storyblok && currentRoute.query._storyblok !== '');
   const version = isPreview ? 'draft' : 'published';
 
-  console.log('path:', currentRoute.path);
-  console.log('version:', version);
-  console.log('language:', calculatedLocale);
-
-  const story = await useCustomAsyncStoryblok(currentRoute.path, {
+  const story = ref({} as ISbStoryData);
+  await useCustomAsyncStoryblok(currentRoute.path, {
     version,
     language: calculatedLocale,
     resolve_relations: 'popular-articles.articles',
-  }, {
-    preventClicks: true,
+  }).then((response) => {
+    if (!response) { return; }
+    story.value = response.value;
   });
-  console.log(story.value);
 </script>
 
 <template>
