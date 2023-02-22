@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="localePath(`/${slug}${slug.slice(-1) !== '/' ? '/' : ''}`)"
+    :to="localePath(`/${slug}`)"
     v-editable="article"
     class="w-full h-full bg-[#f7f6fd] rounded-[5px] text-center overflow-hidden"
   >

@@ -6,7 +6,7 @@ const resolveRelations = ['popular-articles.articles']
 
 const url = slug && slug.length > 0 ? slug.join('/') : 'home'
 
-const story = await useAsyncStoryblok(url,
+const story = await useAsyncStoryblok(url.replace(/\/$/, ''),
   {
     version: 'draft',
     language: locale.value,

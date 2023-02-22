@@ -18,10 +18,9 @@ export default defineNuxtConfig({
     locales: ['en', 'es'],
     defaultLocale: 'en', // default locale
   },
-  generate: {
-    routes: ['/es']
-  },
-  experimental: {
-    payloadExtraction: false
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
   }
 })

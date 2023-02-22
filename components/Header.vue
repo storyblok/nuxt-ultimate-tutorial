@@ -7,15 +7,15 @@
       <nav>
         <ul class="flex space-x-8 text-lg font-bold">
           <li>
-            <NuxtLink :to="localePath('/blog/')" class="hover:text-[#50b0ae]">Blog</NuxtLink>
+            <NuxtLink :to="localePath('/blog')" class="hover:text-[#50b0ae]">Blog</NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('/about/')" class="hover:text-[#50b0ae]">About</NuxtLink>
+            <NuxtLink :to="localePath('/about')" class="hover:text-[#50b0ae]">About</NuxtLink>
           </li>
           <li v-for="lang in availableLocales" :key="lang">
-            <a href="#" @click.prevent.stop="setLocale(lang)" :class="lang === locale && 'router-link-active'" class="uppercase">
+            <NuxtLink :to="switchLocalePath(lang)" class="uppercase">
               {{ lang }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -24,8 +24,9 @@
 </template>
 
 <script setup>
+const { locale, locales } = useI18n()
 const localePath = useLocalePath()
-const { locale, locales, setLocale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const availableLocales = computed(() => {
   return (locales.value).filter(i => i.code !== locale.value)
