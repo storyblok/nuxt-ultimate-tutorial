@@ -13,9 +13,9 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.2.0",
-    "@storyblok/nuxt": "^5.0.2",
+    "@storyblok/nuxt": "^5.1.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.2.2"
   }
 }
