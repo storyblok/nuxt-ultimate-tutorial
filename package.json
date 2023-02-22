@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "dev-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "static-server": "npx serve .output/public",
@@ -13,13 +13,11 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.1.1",
-    "@storyblok/nuxt": "^4.4.2",
+    "@nuxtjs/i18n": "^8.0.0-beta.10",
+    "@nuxtjs/tailwindcss": "^6.1.3",
+    "@storyblok/nuxt": "^5.1.0",
     "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.7",
-    "nuxt": "^3.0.0-rc.12"
-  },
-  "dependencies": {
-    "@nuxtjs/i18n": "^8.0.0-beta.3"
+    "@tailwindcss/typography": "^0.5.9",
+    "nuxt": "^3.2.2"
   }
 }
