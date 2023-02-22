@@ -24,8 +24,8 @@
 </template>
 
 <script setup>
-const { locale, locales } = useI18n()
 const localePath = useLocalePath()
+const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
 const availableLocales = computed(() => {
