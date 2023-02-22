@@ -35,3 +35,10 @@ You can switch between the different branches of this repository; there is one b
 - Live demo: [Open in StackBlitz](https://stackblitz.com/edit/nuxt-ultimate-tutorial-part-5)
 - Branch: [part-5](https://github.com/storyblok/nuxt-ultimate-tutorial/tree/part-5)
 - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/169999)
+
+### Part 6
+
+- Tutorial: [Manage Multilingual Content in Storyblok and Nuxt](https://www.storyblok.com/tp/manage-multilingual-content-in-storyblok-and-nuxt)
+- Live demo: [Open in StackBlitz](https://stackblitz.com/edit/nuxt-ultimate-tutorial-part-6)
+- Branch: [part-6](https://github.com/storyblok/nuxt-ultimate-tutorial/tree/part-6)
+- Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/174270)
