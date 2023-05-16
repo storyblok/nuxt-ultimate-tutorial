@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "04:00"
+    #create pull requests against part-1 (used for @storyblok/create-demo)
+    target-branch: "part-1"
+    commit-message:
+      prefix: chore
+      include: scope
+    #if you need to ignore certain dependencies to ensure stability, you can use the "ignore" option
+    #ignore:
+      #- dependency-name: "example-dependency"
