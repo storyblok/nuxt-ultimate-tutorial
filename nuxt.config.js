@@ -12,4 +12,7 @@ export default defineNuxtConfig({
     ],
     '@nuxtjs/tailwindcss',
   ],
+  vite: {
+    optimizeDeps: { exclude: ["fsevents"] }
+  }
 })
