@@ -6,13 +6,10 @@ export default defineNuxtConfig({
       {
         accessToken: 'W1vLyxT5rQ15jBpANjnv0gtt',
         apiOptions: {
-           region: '' // Set 'US" if your space is created in US region (EU default)
+          region: '' // Set 'US" if your space is created in US region (EU default)
         }
       },
     ],
     '@nuxtjs/tailwindcss',
-  ],
-  vite: {
-    optimizeDeps: { exclude: ["fsevents"] }
-  }
+  ]
 })
