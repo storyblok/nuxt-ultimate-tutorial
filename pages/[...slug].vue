@@ -21,6 +21,12 @@ const { data: story, pending } = await useAsyncData(
   },
 );
 
+if (!$preview) {
+  if (!story.value) {
+    showError({ statusCode: 404, statusMessage: "Page Not Found" })
+  }
+}
+
 // Load the brigde in preview mode
 onMounted(() => {
   if ($preview && story.value && story.value.id) {
