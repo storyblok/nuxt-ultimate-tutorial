@@ -1,46 +1,28 @@
 <script setup>
-const { $preview } = useNuxtApp()
-const { slug } = useRoute().params
-const url = slug && slug.length > 0 ? slug.join('/') : 'home'
+const route = useRoute()
+let { slug } = route.params
 
-// API options
-const version = $preview ? 'draft' : 'published'
 const { locale } = useI18n()
 const resolveRelations = ['popular-articles.articles']
 
-// Full Static with refresh approach
-const { data: story, pending } = await useAsyncData(
-  `${locale.value}-${url}`,
-  async () => {
-    const { data } = await useStoryblokApi().get(`cdn/stories/${url.replace(/\/$/, '')}`, {
-      version,
-      language: locale.value,
-      resolve_relations: resolveRelations
-    })
-    return data?.story
+// Preview and Production environments SSR
+const isPreview = useRuntimeConfig().NODE_ENV === 'preview'
+const version = route.query._storyblok || isPreview ? 'draft' : 'published'
+
+const url = slug && slug.length > 0 ? slug.join('/') : 'home'
+
+const story = await useAsyncStoryblok(url.replace(/\/$/, ''),
+  {
+    version,
+    language: locale.value,
+    resolve_relations: resolveRelations,
   },
-);
-
-if (!$preview) {
-  if (!story.value) {
-    showError({ statusCode: 404, statusMessage: "Page Not Found" })
+  {
+    resolveRelations,
   }
-}
-
-// Load the brigde in preview mode
-onMounted(() => {
-  if ($preview && story.value && story.value.id) {
-    useStoryblokBridge(
-      story.value.id,
-      (evStory) => story.value = evStory,
-      {
-        resolveRelations,
-      }
-    );
-  }
-});
+)
 </script>
 
 <template>
-  <StoryblokComponent v-if="pending === false && story" :blok="story.content" />
+  <StoryblokComponent v-if="story" :blok="story.content" />
 </template>
