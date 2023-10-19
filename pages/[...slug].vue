@@ -1,10 +1,10 @@
 <script setup>
-const { $preview } = useNuxtApp()
+const { $preview } = useNuxtApp() // Preview & Production approach: "const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'"
 const { slug } = useRoute().params
 const url = slug && slug.length > 0 ? slug.join('/') : 'home'
 
 // API options
-const version = $preview ? 'draft' : 'published'
+const version = $preview ? 'draft' : 'published' // Preview & Production approach: "isPreview ? 'draft' : 'published'"
 const { locale } = useI18n()
 const resolveRelations = ['popular-articles.articles']
 
@@ -21,7 +21,7 @@ const { data: story, pending } = await useAsyncData(
   },
 );
 
-if (!$preview) {
+if (!$preview) { // Preview & Production approach: "!isPreview"
   if (!story.value) {
     showError({ statusCode: 404, statusMessage: "Page Not Found" })
   }
@@ -29,7 +29,7 @@ if (!$preview) {
 
 // Load the brigde in preview mode
 onMounted(() => {
-  if ($preview && story.value && story.value.id) {
+  if ($preview && story.value && story.value.id) { // Preview & Production approach: "isPreview && story.value && story.value.id"
     useStoryblokBridge(
       story.value.id,
       (evStory) => story.value = evStory,
