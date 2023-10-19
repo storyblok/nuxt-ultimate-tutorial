@@ -1,6 +1,7 @@
 import { apiPlugin } from '@storyblok/vue'
 
 export default defineNuxtConfig({
+  ssr: process.env.NUXT_PUBLIC_NODE_ENV === 'production' ? true : false,
   css: ['@/assets/css/roboto.css'],
   modules: [
     [

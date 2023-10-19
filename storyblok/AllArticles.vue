@@ -15,14 +15,13 @@
 <script setup>
 defineProps({ blok: Object })
 
-const { $preview } = useNuxtApp()
-const version = $preview ? 'draft' : 'published'
+const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production';
 
 const { locale } = useI18n()
 const storyblokApi = useStoryblokApi()
 
 const { data } = await storyblokApi.get('cdn/stories', {
-  version,
+  version: isPreview ? 'draft' : 'published',
   language: locale.value,
   starts_with: 'blog',
   is_startpage: false,
