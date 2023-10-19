@@ -1,6 +1,6 @@
 export default defineNuxtPlugin((nuxtApp) => {
-	const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production';
-	const preview = useRoute().query?._storyblok && isPreview || false;
+	const route = useRoute();
+	const preview = route.query?._storyblok || false;
 
 	if (preview) {
 		nuxtApp.hook('page:finish', () => { refreshNuxtData() });
