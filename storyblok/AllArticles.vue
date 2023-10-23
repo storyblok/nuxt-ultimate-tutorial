@@ -1,5 +1,5 @@
 <template>
-  <div class="py-24">
+  <div v-editable="blok" class="py-24">
     <h2 class="text-6xl text-[#50b0ae] font-bold text-center mb-12">{{ blok.title }}</h2>
     <div class="container mx-auto grid md:grid-cols-3 gap-12 my-12 place-items-start">
       <ArticleCard
@@ -15,11 +15,13 @@
 <script setup>
 defineProps({ blok: Object })
 
+const { $preview } = useNuxtApp() // Preview & Production approach: "const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'"
+
 const { locale } = useI18n()
 const storyblokApi = useStoryblokApi()
 
 const { data } = await storyblokApi.get('cdn/stories', {
-  version: 'draft',
+  version: $preview ? 'draft' : 'published', // Preview & Production approach: "isPreview ? 'draft' : 'published'"
   language: locale.value,
   starts_with: 'blog',
   is_startpage: false,

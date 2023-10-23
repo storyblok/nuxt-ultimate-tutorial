@@ -1,12 +1,14 @@
 import { apiPlugin } from '@storyblok/vue'
 
 export default defineNuxtConfig({
+  // Preview & Production approach: Uncomment this 👇🏼
+  // ssr: process.env.NUXT_PUBLIC_NODE_ENV === 'production' ? true : false,
   css: ['@/assets/css/roboto.css'],
   modules: [
     [
       '@storyblok/nuxt',
       {
-        accessToken: 'xr4OhJ2GGQ6Oco2ugxQn0Att',
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
         use: [apiPlugin]
       },
     ],
@@ -22,5 +24,11 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true
     }
-  }
+  },
+  // Preview & Production approach: Uncomment this 👇🏼
+  /* runtimeConfig: {
+    public: {
+      NODE_ENV: process.env.NODE_ENV
+    }
+  }, */
 })
