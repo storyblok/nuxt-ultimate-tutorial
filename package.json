@@ -12,9 +12,9 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@storyblok/nuxt": "^5.6.6",
-    "@tailwindcss/typography": "^0.5.9",
-    "nuxt": "^3.6.5"
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@storyblok/nuxt": "^6.0.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "nuxt": "^3.10.2"
   }
 }
