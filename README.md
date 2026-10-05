@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> For a current Nuxt + Storyblok starter, use [blueprint-core-nuxt](https://github.com/storyblok/blueprint-core-nuxt).
+
 # The Storyblok Nuxt Ultimate Tutorial
 
 In this tutorial series, you will learn how to build a headless website using Storyblok and Nuxt 3. Starting with the fundamental integration of Storyblok in Nuxt, more advanced functionalities are explained in bite-sized content pieces, such as dynamic page rendering, dynamic menus, custom components, multilingual content and more.
